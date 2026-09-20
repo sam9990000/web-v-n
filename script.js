@@ -1,0 +1,2 @@
+document.querySelector('.menu-btn')?.addEventListener('click',()=>document.querySelector('nav').classList.toggle('open'));
+document.querySelectorAll('.option').forEach(o=>o.addEventListener('click',()=>{const r=document.getElementById('quiz-result');r.textContent=o.dataset.correct==="true"?"✓ Chính xác! Chiếc bóng là chi tiết then chốt của truyện.":"Chưa đúng — hãy thử lại nhé."; if(o.dataset.correct==="true") document.querySelectorAll('.option').forEach(x=>x.disabled=true)}));
