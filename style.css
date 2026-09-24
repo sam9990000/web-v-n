@@ -27,9 +27,11 @@ footer{display:flex;justify-content:space-between;padding:24px 6vw;background:va
 .hero-image-frame img{width:100%;height:100%;display:block;object-fit:contain;object-position:center center;transform:scaleX(-1)}
 @media(max-width:900px){.hero-image-art{min-height:430px;padding:18px 24px 30px}.hero-image-frame{width:min(300px,86vw);height:420px}}
 
-/* Hòa ảnh vào nền giấy: không còn cảm giác có một hình chữ nhật phía sau */
+/* Hình minh họa Vũ Nương — hòa tự nhiên vào nền giấy */
 .hero-image-frame img {
   mix-blend-mode: multiply;
-  opacity: .96;
-  filter: saturate(.98) contrast(1.02);
+  opacity: .98;
+  filter: saturate(.96) contrast(1.01);
+  -webkit-mask-image: radial-gradient(ellipse 72% 86% at 50% 50%, #000 62%, rgba(0,0,0,.92) 76%, transparent 100%);
+  mask-image: radial-gradient(ellipse 72% 86% at 50% 50%, #000 62%, rgba(0,0,0,.92) 76%, transparent 100%);
 }
