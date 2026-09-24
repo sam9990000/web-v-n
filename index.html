@@ -1,47 +1,102 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chuyện Người Con Gái Nam Xương</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Người con gái Nam Xương</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Great+Vibes&family=Lora:wght@500;600&family=Be+Vietnam+Pro:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f1e1c1; --ink:#3a241c; --red:#a8341f; --line:#dcc6a0;
+  --serif:"Playfair Display","Times New Roman",serif;
+  --script:"Great Vibes","Playfair Display",cursive;
+  --nav:"Lora",Georgia,serif;
+  --sans:"Be Vietnam Pro",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--paper);color:var(--ink);display:flex;flex-direction:column;min-height:100vh}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--red);outline-offset:4px}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:0 clamp(20px,5.7vw,96px);height:78px;border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:5;background:var(--paper)}
+.brand{font-family:var(--serif);font-weight:600;font-size:19px;line-height:1.05;letter-spacing:.01em}
+.brand span{display:block;color:var(--red);font-weight:700}
+nav ul{display:flex;gap:clamp(16px,2.3vw,34px);list-style:none;padding:0;flex-wrap:wrap}
+nav a{font-family:var(--nav);font-weight:600;font-size:17px;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+nav a:hover,nav a[aria-current]{color:var(--red);border-color:var(--red)}
+
+.hero{flex:1;position:relative;overflow:hidden;display:flex;align-items:center;
+  padding:40px clamp(20px,7.7vw,130px)}
+.art{position:absolute;inset:0 0 0 auto;width:min(48%,760px);
+  background:url("hero.jpg") right center/cover no-repeat;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%);
+          mask-image:linear-gradient(90deg,transparent 0,#000 22%)}
+.copy{position:relative;z-index:1;max-width:60%}
+.eyebrow{font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.script{font-family:var(--script);font-size:clamp(64px,7vw,104px);line-height:.9;margin:6px 0 -.32em;color:var(--ink);position:relative}
+h1{font-family:var(--serif);font-weight:700;color:var(--red);text-transform:uppercase;
+  font-size:clamp(46px,6.6vw,108px);line-height:1.02;letter-spacing:-.02em}
+h1 span{display:block;padding-left:.4em}
+.author{font-family:var(--script);font-size:clamp(34px,3.2vw,48px);margin:26px 0 22px;display:flex;align-items:center;gap:14px}
+.author::before,.author::after{content:"";width:34px;height:1px;background:var(--ink)}
+.tag{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.1vw,30px);margin-bottom:34px}
+.btn{display:inline-block;background:var(--ink);color:#fff;font-family:var(--sans);font-weight:600;
+  font-size:14px;letter-spacing:.09em;text-transform:uppercase;padding:20px 26px;
+  box-shadow:8px 8px 0 rgba(168,52,31,.18);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:10px 10px 0 rgba(168,52,31,.25)}
+
+footer{background:var(--ink);color:#f1e1c1;display:flex;justify-content:space-between;gap:16px;
+  padding:0 clamp(20px,5.7vw,96px);height:57px;align-items:center;
+  font-family:var(--sans);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+
+@media (max-width:900px){
+  header{height:auto;padding:14px 20px;flex-direction:column;align-items:flex-start;position:static}
+  nav a{font-size:15px}
+  .hero{align-items:flex-start;padding-top:32px;padding-bottom:300px}
+  .copy{max-width:100%}
+  .art{inset:auto 0 0 0;width:100%;height:340px;background-position:right bottom;
+    -webkit-mask-image:linear-gradient(0deg,#000 60%,transparent);mask-image:linear-gradient(0deg,#000 60%,transparent)}
+  footer{height:auto;padding:16px 20px;font-size:11px}
+}
+</style>
 </head>
 <body>
-<header class="navbar">
-  <a class="brand" href="index.html">NGƯỜI CON GÁI<br><span>NAM XƯƠNG</span></a>
-  <button class="menu-btn" aria-label="Mở menu">☰</button>
-  <nav>
-    <a class="active" href="index.html">Trang chủ</a>
-    <a href="tac-pham.html">Tác phẩm</a>
-    <a href="cot-truyen.html">Cốt truyện</a>
-    <a href="nhan-vat.html">Nhân vật</a>
-    <a href="chu-de.html">Chủ đề</a>
-    <a href="nghe-thuat.html">Nghệ thuật</a>
-    <a href="cam-nhan.html">Cảm nhận</a>
-    <a href="nguon-tham-khao.html">Nguồn</a>
+<header>
+  <a class="brand" href="index.html">Người con gái<span>Nam Xương</span></a>
+  <nav aria-label="Chính">
+    <ul>
+      <li><a href="index.html" aria-current="page">Trang chủ</a></li>
+      <li><a href="#tac-pham">Tác phẩm</a></li>
+      <li><a href="#cot-truyen">Cốt truyện</a></li>
+      <li><a href="#nhan-vat">Nhân vật</a></li>
+      <li><a href="#chu-de">Chủ đề</a></li>
+      <li><a href="#nghe-thuat">Nghệ thuật</a></li>
+      <li><a href="#cam-nhan">Cảm nhận</a></li>
+      <li><a href="#nguon">Nguồn</a></li>
+    </ul>
   </nav>
 </header>
-<main class="page">
-<section class="hero">
-  <div class="hero-content">
-    <div class="eyebrow">MỘT TRANG VĂN • MỘT CÂU CHUYỆN</div>
-    <div class="script">Chuyện</div>
-    <h1>NGƯỜI CON GÁI<br><span>NAM XƯƠNG</span></h1>
-    <div class="author">— Nguyễn Dữ —</div>
-    <p class="lead">Bi kịch của một đời người</p>
-    <a class="btn" href="tac-pham.html">KHÁM PHÁ TÁC PHẨM →</a>
+
+<main class="hero">
+  <div class="art" role="img" aria-label="Tranh minh họa Vũ Nương bế con bên hoa sen"></div>
+  <div class="copy">
+    <p class="eyebrow">Một trang văn • Một câu chuyện</p>
+    <p class="script" aria-hidden="true">Chuyện</p>
+    <h1><span style="padding:0">Người con gái</span><span>Nam Xương</span></h1>
+    <p class="author">Nguyễn Dữ</p>
+    <p class="tag">Bi kịch của một đời người</p>
+    <a class="btn" href="#tac-pham">Khám phá tác phẩm →</a>
   </div>
-  <div class="hero-art hero-image-art">
-    <div class="hero-image-frame">
-      <img src="minh-hoa-vu-nuong.png" alt="Minh họa Vũ Nương trong Chuyện người con gái Nam Xương">
-    </div>
-  </div>
-</section>
 </main>
-<footer><span>THỰC HIỆN CHO BÀI THỰC HÀNH NGỮ VĂN</span><span>© 2026</span></footer>
-<script>
-const btn=document.querySelector('.menu-btn'); const nav=document.querySelector('nav');
-if(btn) btn.addEventListener('click',()=>nav.classList.toggle('open'));
-</script>
+
+<footer>
+  <span>Thực hiện cho bài thực hành Ngữ văn</span>
+  <span>© 2026</span>
+</footer>
 </body>
 </html>
