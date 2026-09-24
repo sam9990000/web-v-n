@@ -56,7 +56,8 @@ footer{display:flex;justify-content:space-between;padding:24px 6vw;background:va
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: left center;
+  object-position: center center;
+  transform: scaleX(-1);
 }
 @media (max-width: 900px) {
   .hero-image-art { min-height: 430px; padding: 18px 24px 30px; }
