@@ -1,2 +1,4 @@
 document.querySelector('.menu-btn')?.addEventListener('click',()=>document.querySelector('nav').classList.toggle('open'));
 document.querySelectorAll('.option').forEach(o=>o.addEventListener('click',()=>{const r=document.getElementById('quiz-result');r.textContent=o.dataset.correct==="true"?"✓ Chính xác! Chiếc bóng là chi tiết then chốt của truyện.":"Chưa đúng — hãy thử lại nhé."; if(o.dataset.correct==="true") document.querySelectorAll('.option').forEach(x=>x.disabled=true)}));
+document.querySelectorAll('[data-open]').forEach(el=>{const d=document.getElementById(el.dataset.open);const open=()=>d.showModal();el.addEventListener('click',open);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
+document.querySelectorAll('dialog').forEach(d=>{d.addEventListener('click',e=>{if(e.target===d)d.close()});d.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>d.close()))});
