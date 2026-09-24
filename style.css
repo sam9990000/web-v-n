@@ -27,9 +27,18 @@ footer{display:flex;justify-content:space-between;padding:24px 6vw;background:va
 .hero-image-frame img{width:100%;height:100%;display:block;object-fit:contain;object-position:center center;transform:scaleX(-1)}
 @media(max-width:900px){.hero-image-art{min-height:430px;padding:18px 24px 30px}.hero-image-frame{width:min(300px,86vw);height:420px}}
 
-/* Hòa ảnh vào nền giấy: không còn cảm giác có một hình chữ nhật phía sau */
+/* Hình minh họa Vũ Nương — hòa tự nhiên vào nền giấy */
 .hero-image-frame img {
   mix-blend-mode: multiply;
-  opacity: .96;
-  filter: saturate(.98) contrast(1.02);
+  opacity: .98;
+  filter: saturate(.96) contrast(1.01);
+  -webkit-mask-image: radial-gradient(ellipse 72% 86% at 50% 50%, #000 62%, rgba(0,0,0,.92) 76%, transparent 100%);
+  mask-image: radial-gradient(ellipse 72% 86% at 50% 50%, #000 62%, rgba(0,0,0,.92) 76%, transparent 100%);
 }
+/* --- Trang chủ: minh họa hòa trực tiếp vào nền --- */
+.hero{position:relative;overflow:hidden;}
+.hero-image-art{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:flex-end;min-height:620px;padding:0 1vw 0 0;background:transparent;}
+.hero-image-frame{position:relative;width:min(560px,48vw);height:620px;overflow:visible;border:0;box-shadow:none;background:transparent;transform:none;}
+.hero-image-frame img{position:absolute;right:-20px;bottom:-18px;width:100%;height:100%;display:block;object-fit:contain;object-position:center bottom;transform:scaleX(-1);mix-blend-mode:normal;opacity:1;filter:none;-webkit-mask-image:none;mask-image:none;}
+.hero-content{position:relative;z-index:3;}
+@media(max-width:900px){.hero{display:block}.hero-image-art{min-height:440px;padding:0 4vw}.hero-image-frame{width:min(430px,88vw);height:440px}.hero-image-frame img{right:0;bottom:0}.hero-content{z-index:4}}
