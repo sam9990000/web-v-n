@@ -4,258 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nghệ Thuật - Chuyện Người Con Gái Nam Xương</title>
-    <!-- Liên kết file CSS dùng chung của dự án -->
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome hỗ trợ icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- CSS đồng bộ bố cục và kiểu dáng giao diện -->
-    <style>
-        :root {
-            --primary-color: #8b263e;
-            --secondary-color: #1a365d;
-            --accent-color: #d4af37;
-            --bg-light: #f9f8f3;
-            --card-bg: #ffffff;
-            --text-color: #2d3748;
-            --text-muted: #4a5568;
-            --border-color: #e2e8f0;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-color);
-            line-height: 1.7;
-        }
-
-        /* Thanh điều hướng */
-        header {
-            background-color: var(--secondary-color);
-            color: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .logo a {
-            color: #fff;
-            font-size: 1.3rem;
-            font-weight: 700;
-            text-decoration: none;
-            font-family: Georgia, 'Times New Roman', serif;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.2rem;
-        }
-
-        .nav-links a {
-            color: #e2e8f0;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.4rem 0.8rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: #fff;
-            background-color: rgba(255, 255, 255, 0.15);
-        }
-
-        /* Page Banner */
-        .page-banner {
-            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-            color: #fff;
-            text-align: center;
-            padding: 3.5rem 1.5rem;
-        }
-
-        .banner-content h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.8rem;
-            font-family: Georgia, 'Times New Roman', serif;
-            letter-spacing: 1px;
-        }
-
-        .banner-content p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            max-width: 750px;
-            margin: 0 auto;
-        }
-
-        /* Main Content Container */
-        .main-container {
-            max-width: 1000px;
-            margin: 2.5rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .intro-box {
-            background-color: #fff;
-            border-left: 5px solid var(--primary-color);
-            padding: 1.5rem 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
-        }
-
-        .intro-box h2 {
-            color: var(--primary-color);
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 1.4rem;
-        }
-
-        /* Section Cards */
-        .section-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            margin-bottom: 2rem;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
-
-        .card-header {
-            background-color: #f7fafc;
-            padding: 1.25rem 1.75rem;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .card-header h2 {
-            font-size: 1.3rem;
-            color: var(--secondary-color);
-            font-family: Georgia, 'Times New Roman', serif;
-        }
-
-        .badge {
-            background-color: var(--primary-color);
-            color: #fff;
-            font-weight: 700;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 1rem;
-        }
-
-        .card-body {
-            padding: 1.75rem;
-        }
-
-        .card-body > p {
-            margin-bottom: 1rem;
-        }
-
-        /* Feature List Styling */
-        .art-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .art-list > li {
-            position: relative;
-            padding-left: 1.75rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .art-list > li:last-child {
-            margin-bottom: 0;
-        }
-
-        .art-list > li::before {
-            content: "\f00c";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            top: 2px;
-            color: var(--primary-color);
-            font-size: 0.9rem;
-        }
-
-        .art-list ul {
-            margin-top: 0.6rem;
-            margin-left: 1.2rem;
-            list-style-type: disc;
-        }
-
-        .art-list ul li {
-            margin-bottom: 0.4rem;
-            color: var(--text-muted);
-        }
-
-        /* Summary Box */
-        .summary-box {
-            background: linear-gradient(to right, #fffaf0, #feefc3);
-            border: 1px solid #f6ad55;
-            border-radius: 10px;
-            padding: 1.75rem;
-            margin-top: 2.5rem;
-        }
-
-        .summary-box h3 {
-            color: #c05621;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 1.3rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            color: #a0aec0;
-            text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 4rem;
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-    </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Thanh điều hướng Header -->
     <header>
         <nav class="navbar">
             <div class="logo">
@@ -274,21 +28,21 @@
         </nav>
     </header>
 
-    <!-- Header Banner -->
+    <!-- Banner tiêu đề trang -->
     <section class="page-banner">
         <div class="banner-content">
             <h1>GIÁ TRỊ NGHỆ THUẬT ĐẶC SẮC</h1>
-            <p>Khám phá tình huống truyện, nghệ thuật xây dựng nhân vật và bút pháp truyền kỳ bất hủ của Nguyễn Dữ</p>
+            <p>Khám phá bút pháp dựng truyện, khắc họa nhân vật và chi tiết nghệ thuật bất hủ của Nguyễn Dữ</p>
         </div>
     </section>
 
-    <!-- Main Content -->
+    <!-- Nội dung chính -->
     <main class="main-container">
         
         <!-- Tổng quan -->
         <section class="intro-box">
-            <h2><i class="fas fa-palette"></i> Tổng Quan Nghệ Thuật</h2>
-            <p>Tác phẩm <i>"Chuyện người con gái Nam Xương"</i> là một thiên truyền kỳ mẫu mực của văn học trung đại Việt Nam. Bằng tài năng xuất sắc, Nguyễn Dữ đã kết hợp tài tình giữa yếu tố tự sự và biểu cảm, xây dựng tình huống kịch tính cùng chi tiết nghệ thuật giàu giá trị biểu tượng.</p>
+            <h2><i class="fas fa-palette"></i> Tổng Quan Về Nghệ Thuật</h2>
+            <p>Tác phẩm <i>"Chuyện người con gái Nam Xương"</i> không chỉ thu hút người đọc bởi giá trị nhân đạo sâu sắc mà còn là một kiệt tác văn xuôi trung đại. Bằng tài năng xuất sắc, Nguyễn Dữ đã kết hợp tài tình giữa yếu tố tự sự và biểu cảm, xây dựng tình huống kịch tính cùng chi tiết nghệ thuật giàu giá trị biểu tượng.</p>
         </section>
 
         <!-- 1. Tình huống truyện & Chi tiết chiếc bóng -->
@@ -298,10 +52,10 @@
                 <h2>Xây Dựng Tình Huống Truyện Độc Đáo & Chi Tiết Chiếc Bóng</h2>
             </div>
             <div class="card-body">
-                <p>Tác giả đã sáng tạo một tình huống truyện đầy kịch tính, trong đó <strong>chi tiết chiếc bóng</strong> đóng vai trò là nút thắt và mở toàn bộ câu chuyện:</p>
+                <p>Tác giả đã sáng tạo một tình huống truyện đầy kịch tính, trong đó <strong>chi tiết chiếc bóng</strong> đóng vai trò là điểm tựa nghệ thuật cốt lõi, thắt và mở nút toàn bộ câu chuyện:</p>
                 <ul class="art-list">
                     <li>
-                        <strong>Chi tiết thắt nút bi kịch:</strong> Khi Trương Sinh đi xa, Vũ Nương vì nhớ thương chồng và dỗ dành con nhỏ nên đã chỉ vào chiếc bóng của mình trên tường và nói đó là cha bé Đản. Lời nói vô tình và ngây thơ của con trẻ đã gieo rắc sự nghi ngờ vào lòng Trương Sinh – một người chồng đa nghi, dẫn đến bi kịch oan khuất buộc Vũ Nương phải gieo mình xuống sông Hoàng Giang.
+                        <strong>Chi tiết thắt nút bi kịch:</strong> Khi Trương Sinh đi xa, Vũ Nương vì nhớ thương chồng và dỗ dành con nhỏ nên đã chỉ vào chiếc bóng của mình trên tường và nói đó là cha bé Đản. Lời nói vô tình và ngây thơ của con trẻ đã gieo rắc sự nghi ngờ vô căn cứ vào lòng Trương Sinh – một người chồng đa nghi, dẫn đến bi kịch oan khuất buộc Vũ Nương phải gieo mình xuống sông Hoàng Giang để chứng minh sự thanh bạch.
                     </li>
                     <li>
                         <strong>Chi tiết mở nút oan khuất:</strong> Sau khi Vũ Nương qua đời, trong một đêm ngồi bên ngọn đèn dầu, bé Đản lại chỉ vào bóng của Trương Sinh trên tường và gọi là cha. Lúc này Trương Sinh mới thấu hiểu sự thật, nỗi oan của người vợ hiền thục mới được giải tỏa, nhưng tất cả đã quá muộn màng.
@@ -317,13 +71,13 @@
                 <h2>Nghệ Thuật Dựng Truyện Hấp Dẫn, Lôi Cuốn</h2>
             </div>
             <div class="card-body">
-                <p>Câu chuyện được dẫn dắt theo một mạch lô-gích chặt chẽ, tự nhiên nhưng không kém phần bất ngờ:</p>
+                <p>Câu chuyện được dẫn dắt bởi tình huống truyện hợp lý, tự nhiên nhưng không kém phần hấp dẫn:</p>
                 <ul class="art-list">
                     <li>
-                        <strong>Dẫn dắt tình huống hợp lý:</strong> Diễn biến truyện phát triển tuần tự từ cuộc hôn nhân, Trương Sinh đi lính, Vũ Nương ở nhà sinh con và phụng dưỡng mẹ già, đến khi Trương Sinh trở về và bi kịch bùng nổ.
+                        <strong>Tình huống hợp lý:</strong> Diễn biến truyện phát triển tuần tự từ lúc hai vợ chồng cưới nhau, Trương Sinh đi lính, Vũ Nương ở nhà sinh con và phụng dưỡng mẹ già, đến khi Trương Sinh trở về và bi kịch bùng nổ.
                     </li>
                     <li>
-                        <strong>Tạo kịch tính lôi cuốn:</strong> Các sự kiện được xếp đặt đan cài nhuần nhuyễn, mức độ mâu thuẫn tăng dần giúp câu chuyện giữ được sự tò mò và cuốn hút người đọc từ đầu đến cuối.
+                        <strong>Dẫn dắt kịch tính:</strong> Các sự kiện được xếp đặt đan cài nhuần nhuyễn, mức độ mâu thuẫn tăng dần giúp câu chuyện giữ được sự tò mò và lôi cuốn người đọc từ đầu đến cuối.
                     </li>
                 </ul>
             </div>
@@ -336,10 +90,10 @@
                 <h2>Nghệ Thuật Xây Dựng Nhân Vật & Ngôn Ngữ Đối Thoại</h2>
             </div>
             <div class="card-body">
-                <p>Tính cách và nội tâm nhân vật được khắc họa sâu sắc thông qua ngôn ngữ trần thuật, hành động và những lời đối thoại đặc sắc:</p>
+                <p>Nghệ thuật trần thuật và đối thoại của nhân vật vô cùng đặc sắc, thể hiện sâu sắc tính cách từng nhân vật qua lời nói và hành động:</p>
                 <ul class="art-list">
                     <li>
-                        <strong>Lời nói của Vũ Nương:</strong> Bộc lộ rõ phẩm hạnh và tâm trạng qua từng chặng bi kịch:
+                        <strong>Lời nói của Vũ Nương:</strong> Bộc lộ rõ phẩm hạnh và tâm trạng qua từng chặng:
                         <ul>
                             <li><i>Khi tiễn chồng đi lính:</i> Lời dặn dò chân thành, không mong vinh hoa gấm vóc mà chỉ mong chồng trở về bình an.</li>
                             <li><i>Khi bị nghi oan:</i> Ba lần phân trần thiết tha, nghẹn ngào, thể hiện sự nhẫn nại, nỗ lực cứu vớt hạnh phúc gia đình và bảo vệ phẩm giá.</li>
@@ -347,7 +101,7 @@
                         </ul>
                     </li>
                     <li>
-                        <strong>Hành động và khắc họa nhân vật:</strong> Lời nói ngây thơ của bé Đản kết hợp với thái độ gia trưởng, độc đoán của Trương Sinh đã tạo nên sự tương phản sắc nét, đẩy đỉnh điểm bi kịch lên cao.
+                        <strong>Hành động và thái độ nhân vật:</strong> Lời nói ngây thơ của bé Đản kết hợp với thái độ gia trưởng, độc đoán của Trương Sinh đã tạo nên sự tương phản sắc nét, đẩy đỉnh điểm bi kịch lên cao.
                     </li>
                 </ul>
             </div>
@@ -357,16 +111,16 @@
         <section class="section-card">
             <div class="card-header">
                 <span class="badge">04</span>
-                <h2>Sử Dụng Yếu Tố Kỳ Ảo Nhấn Mạnh Giá Trị Nhân Đạo</h2>
+                <h2>Sử Dụng Yếu Tố Kỳ Ảo Làm Nổi Bật Giá Trị Nhân Đạo</h2>
             </div>
             <div class="card-body">
-                <p>Là một tác phẩm thuộc thể loại truyền kỳ, việc đan cài các yếu tố hoang đường, kỳ ảo mang lại giá trị nghệ thuật và tư tưởng độc đáo:</p>
+                <p>Yếu tố kỳ ảo, hoang đường làm cho câu chuyện vừa thực vừa mơ, vừa có hậu vừa bi kịch, làm hoàn chỉnh vẻ đẹp của nhân vật Vũ Nương:</p>
                 <ul class="art-list">
                     <li>
                         <strong>Thế giới lung linh kỳ ảo:</strong> Chi tiết Phan Lang được Linh Fei cứu giúp, gặp Vũ Nương dưới thủy cung, và hình ảnh Vũ Nương ngồi trên chiếc kiệu hoa ẩn hiện giữa dòng sông rồi biến mất.
                     </li>
                     <li>
-                        <strong>Giá trị nhân văn sâu sắc:</strong> Yếu tố kỳ ảo làm cho câu chuyện vừa thực vừa mơ, vừa có hậu (giải tỏa nỗi oan khuất và tôn vinh phẩm hạnh) nhưng vẫn mang tính bi kịch (sự chia ly vĩnh viễn). Qua đó, tác giả hoàn chỉnh vẻ đẹp trọn vẹn của Vũ Nương và thể hiện ước mơ về sự công bằng của nhân dân.
+                        <strong>Hoàn chỉnh vẻ đẹp nhân vật & Giá trị nhân văn:</strong> Yếu tố kỳ ảo giúp minh oan cho Vũ Nương, giữ trọn vẻ đẹp phẩm giá cao quý của cô. Đồng thời tạo ra một kết thúc vừa có hậu (được minh oan) vừa bi kịch (không thể trở về nhân gian), thể hiện ước mơ về sự công bằng và lòng đồng cảm sâu sắc của tác giả.
                     </li>
                 </ul>
             </div>
@@ -376,25 +130,25 @@
         <section class="section-card">
             <div class="card-header">
                 <span class="badge">05</span>
-                <h2>Sự Kết Hợp Nhuần Nhuyễn Giữa Tự Sự Và Biểu Cảm</h2>
+                <h2>Sự Kết Hợp Phương Thức Biểu Đạt: Tự Sự + Biểu Cảm</h2>
             </div>
             <div class="card-body">
-                <p>Truyện đạt đến sự hài hòa giữa mạch kể chuyện và cảm xúc sâu lắng:</p>
+                <p>Truyện có sự kết hợp nhuần nhuyễn giữa các phương thức biểu đạt: tự sự và biểu cảm, làm nên một áng văn xuôi bất hủ:</p>
                 <ul class="art-list">
                     <li>
-                        <strong>Tự sự:</strong> Giữ vai trò nòng cốt, thuật lại chuỗi sự kiện một cách rõ ràng, mạch lạc.
+                        <strong>Tự sự:</strong> Giữ vai trò nòng cốt, thuật lại chuỗi sự kiện một cách rõ ràng, mạch lạc và chân thực.
                     </li>
                     <li>
-                        <strong>Biểu cảm:</strong> Thẩm thấu vào từng lời thoại, khung cảnh và tâm trạng nhân vật, gợi lên sự xót xa, đồng cảm sâu sắc với số phận người phụ nữ trong xã hội phong kiến, làm nên một áng văn xuôi bất hủ.
+                        <strong>Biểu cảm:</strong> Thẩm thấu vào từng lời thoại, khung cảnh và tâm trạng nhân vật, gợi lên sự xót xa, thương cảm sâu sắc đối với số phận người phụ nữ trong xã hội phong kiến.
                     </li>
                 </ul>
             </div>
         </section>
 
-        <!-- Tóm tắt cuối trang -->
+        <!-- Khối kết luận -->
         <section class="summary-box">
-            <h3><i class="fas fa-gem"></i> Tổng Kết Nghệ Thuật</h3>
-            <p>Sự kết hợp xuất sắc của 5 yếu tố nghệ thuật trên đã khẳng định tài năng bậc thầy của Nguyễn Dữ, giúp <strong>"Chuyện người con gái Nam Xương"</strong> không chỉ là một thiên truyền kỳ mẫu mực mà còn là một tác phẩm văn học cổ điển sống mãi với thời gian.</p>
+            <h3><i class="fas fa-gem"></i> Tổng Kết</h3>
+            <p>Sự kết hợp xuất sắc của 5 yếu tố nghệ thuật trên đã khẳng định tài năng bậc thầy của Nguyễn Dữ, giúp <strong>"Chuyện người con gái Nam Xương"</strong> trở thành một áng văn xuôi bất hủ sống mãi với thời gian.</p>
         </section>
 
     </main>
@@ -409,8 +163,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-```
-
-File `nghe-thuat.html` đã được cập nhật thành công ở khung soạn thảo bên phải! 
-
-File này chứa đầy đủ 5 luận điểm nghệ thuật theo đúng yêu cầu của bạn, đồng thời đã tích hợp sẵn CSS nội bộ giúp hiển thị giao diện đẹp mắt và đồng bộ với hai trang **Cốt truyện** và **Chủ đề**.
