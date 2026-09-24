@@ -1,151 +1,231 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nghệ Thuật - Chuyện Người Con Gái Nam Xương</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* CSS căn chỉnh đồng bộ trực tiếp với giao diện trang Chủ đề */
-        body {
-            background-color: #f3eada;
-            font-family: 'Georgia', 'Times New Roman', serif;
-            margin: 0;
-            padding: 0 40px 40px 40px;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 0;
-        }
+  <title>Nghệ thuật — Người con gái Nam Xương</title>
 
-        .logo a {
-            font-size: 14px;
-            font-weight: bold;
-            color: #8b2626;
-            text-decoration: none;
-            letter-spacing: 1px;
-            line-height: 1.3;
-            display: block;
-            text-transform: uppercase;
-        }
-
-        .back-btn {
-            color: #333;
-            text-decoration: none;
-            font-size: 15px;
-        }
-
-        .back-btn:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            display: flex;
-            gap: 30px;
-            max-width: 1300px;
-            margin: 0 auto;
-            align-items: stretch;
-        }
-
-        .content-card {
-            flex: 1.2;
-            background: #ffffff;
-            padding: 45px;
-            border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .content-card h1 {
-            color: #8b2626;
-            font-size: 36px;
-            margin-top: 0;
-            margin-bottom: 25px;
-            font-weight: normal;
-        }
-
-        .content-card h2 {
-            color: #8b2626;
-            font-size: 22px;
-            margin-top: 25px;
-            margin-bottom: 12px;
-            font-weight: bold;
-        }
-
-        .content-card p {
-            line-height: 1.7;
-            font-size: 16px;
-            color: #444;
-            margin-bottom: 18px;
-        }
-
-        .image-card {
-            flex: 0.8;
-            display: flex;
-        }
-
-        .image-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        @media (max-width: 900px) {
-            .container {
-                flex-direction: column;
-            }
-            body {
-                padding: 15px;
-            }
-        }
-    </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Header tối giản chuẩn trang Chủ đề -->
-    <header>
-        <div class="logo">
-            <a href="index.html">NGƯỜI CON GÁI<br>NAM XƯƠNG</a>
-        </div>
-        <a href="index.html" class="back-btn">— Quay lại</a>
-    </header>
+  <!-- THANH ĐIỀU HƯỚNG -->
+  <header class="navbar">
 
-    <!-- Khung nội dung 2 cột -->
-    <main class="container">
-        
-        <!-- Cột trái: Thẻ trắng chứa nội dung Nghệ thuật -->
-        <div class="content-card">
-            <h1>Nghệ thuật</h1>
-            
-            <p>Tác phẩm <i>"Chuyện người con gái Nam Xương"</i> là một áng văn xuôi bất hủ trong nền văn học trung đại Việt Nam nhờ sự kết hợp tài tình của các yếu tố nghệ thuật đặc sắc:</p>
+    <a class="brand" href="index.html">
+      NGƯỜI CON GÁI<br>
+      <span>NAM XƯƠNG</span>
+    </a>
 
-            <h2>1. Tình huống truyện độc đáo & Chi tiết chiếc bóng</h2>
-            <p>Xây dựng tình huống truyện độc đáo, đặc biệt là <strong>chi tiết chiếc bóng</strong>. Chi tiết chiếc bóng đóng vai trò nòng cốt: vừa là chi tiết <em>thắt nút</em> gieo rắc sự nghi ngờ đẩy câu chuyện lên đỉnh điểm bi kịch, vừa là chi tiết <em>mở nút</em> giải tỏa nỗi oan khuất cho Vũ Nương.</p>
+    <nav>
+      <a href="index.html">Trang chủ</a>
+      <a href="tac-pham.html">Tác phẩm</a>
+      <a href="cot-truyen.html">Cốt truyện</a>
+      <a href="nhan-vat.html">Nhân vật</a>
+      <a href="chu-de.html">Chủ đề</a>
+      <a class="active" href="nghe-thuat.html">Nghệ thuật</a>
+      <a href="cam-nhan.html">Cảm nhận</a>
+      <a href="nguon-tham-khao.html">Nguồn</a>
+    </nav>
 
-            <h2>2. Nghệ thuật dựng truyện</h2>
-            <p>Truyện được dẫn dắt bởi tình huống truyện hợp lý, tự nhiên, diễn biến kịch tính, hấp dẫn và lôi cuốn người đọc từ đầu đến cuối.</p>
+  </header>
 
-            <h2>3. Xây dựng nhân vật qua lời nói và hành động</h2>
-            <p>Nghệ thuật trần thuật và ngôn ngữ đối thoại của nhân vật vô cùng đặc sắc. Qua từng lời dặn dò, phân trần thiết tha của Vũ Nương và hành động độc đoán của Trương Sinh, tính cách và phẩm hạnh của các nhân vật được khắc họa sâu sắc.</p>
 
-            <h2>4. Sử dụng yếu tố kỳ ảo</h2>
-            <p>Sử dụng yếu tố kỳ ảo, hoang đường làm cho câu chuyện vừa thực vừa mơ, vừa có hậu vừa bi kịch, từ đó làm hoàn chỉnh vẻ đẹp trọn vẹn của nhân vật Vũ Nương và làm nổi bật giá trị nhân đạo của tác phẩm.</p>
+  <!-- NỘI DUNG -->
+  <main class="page">
 
-            <h2>5. Kết hợp phương thức biểu đạt</h2>
-            <p>Truyện có sự kết hợp nhuần nhuyễn giữa các phương thức biểu đạt: <strong>tự sự + biểu cảm</strong>, tạo nên một áng văn xuôi bất hủ sống mãi với thời gian.</p>
-        </div>
+    <section class="page-head">
 
-        <!-- Cột phải: Hình ảnh minh họa -->
-        <div class="image-card">
-            <img src="vu-nuong-chiec-bong.png" alt="Nghệ thuật Chuyện người con gái Nam Xương">
-        </div>
+      <p class="script">Nghệ thuật</p>
 
-    </main>
+      <h1>Những nét nghệ thuật đặc sắc</h1>
+
+      <p>
+        Nguyễn Dữ kết hợp nghệ thuật xây dựng tình huống,
+        khắc họa nhân vật và yếu tố kỳ ảo để làm nổi bật
+        bi kịch của Vũ Nương.
+      </p>
+
+    </section>
+
+
+    <div class="container">
+
+      <div class="story">
+
+
+        <!-- NỘI DUNG CHÍNH -->
+        <article class="card story-text">
+
+
+          <section>
+
+            <h3>
+              01 · Tình huống truyện và chi tiết chiếc bóng
+            </h3>
+
+            <p>
+              Tác giả xây dựng một tình huống truyện tự nhiên
+              nhưng đầy kịch tính, đặc biệt là
+              <strong>chi tiết chiếc bóng</strong>.
+              Chiếc bóng vừa là nguyên nhân gây ra hiểu lầm,
+              đẩy Vũ Nương vào bi kịch, vừa là chi tiết giúp
+              Trương Sinh nhận ra sự thật và giải tỏa nỗi oan
+              cho nàng.
+            </p>
+
+          </section>
+
+
+          <section>
+
+            <h3>
+              02 · Nghệ thuật dựng truyện
+            </h3>
+
+            <p>
+              Câu chuyện được dẫn dắt theo trình tự hợp lý,
+              các sự việc nối tiếp nhau và ngày càng được
+              đẩy lên cao trào. Sự thay đổi từ cuộc sống gia
+              đình bình yên sang bi kịch rồi đến kết thúc
+              kỳ ảo tạo nên sức hấp dẫn cho tác phẩm.
+            </p>
+
+          </section>
+
+
+          <section>
+
+            <h3>
+              03 · Nghệ thuật xây dựng nhân vật
+            </h3>
+
+            <p>
+              Nhân vật được khắc họa chủ yếu qua lời nói,
+              hành động và cách ứng xử. Những lời phân trần
+              của Vũ Nương thể hiện sự thủy chung, nhân hậu;
+              trong khi thái độ hồ đồ, độc đoán của Trương
+              Sinh góp phần làm nổi bật nguyên nhân dẫn đến
+              bi kịch.
+            </p>
+
+          </section>
+
+
+          <section>
+
+            <h3>
+              04 · Sử dụng yếu tố kỳ ảo
+            </h3>
+
+            <p>
+              Những yếu tố kỳ ảo như Linh Phi, cung nước,
+              cuộc gặp gỡ dưới thủy cung và cảnh Vũ Nương
+              trở về trên dòng Hoàng Giang khiến câu chuyện
+              vừa thực vừa mơ.
+            </p>
+
+            <p>
+              Qua đó, tác giả thể hiện ước mơ về công lý
+              và một kết thúc có phần bù đắp cho nhân vật.
+            </p>
+
+          </section>
+
+
+          <section>
+
+            <h3>
+              05 · Kết hợp tự sự và biểu cảm
+            </h3>
+
+            <p>
+              Tác phẩm kết hợp nhuần nhuyễn giữa
+              <strong>tự sự và biểu cảm</strong>.
+              Những sự việc được kể lại không chỉ giúp câu
+              chuyện rõ ràng mà còn khơi gợi sự thương cảm
+              trước số phận của Vũ Nương và làm nổi bật
+              giá trị nhân đạo của tác phẩm.
+            </p>
+
+          </section>
+
+
+          <!-- KẾT -->
+          <div class="story-end">
+
+            <p>
+              Nhờ sự kết hợp giữa tình huống truyện chặt chẽ,
+              chi tiết nghệ thuật giàu ý nghĩa và yếu tố kỳ ảo,
+              tác phẩm để lại ấn tượng sâu sắc về số phận con
+              người trong xã hội xưa.
+            </p>
+
+          </div>
+
+
+        </article>
+
+
+        <!-- HÌNH MINH HỌA -->
+        <aside class="story-art">
+
+          <div class="art-label">
+            ĐẶC SẮC NGHỆ THUẬT
+          </div>
+
+          <div class="art-box">
+
+            <div class="art-number">
+              01
+            </div>
+
+            <h2>
+              Chi tiết<br>
+              chiếc bóng
+            </h2>
+
+            <p>
+              Một chi tiết nhỏ nhưng giữ vai trò
+              quan trọng trong toàn bộ bi kịch
+              của Vũ Nương.
+            </p>
+
+            <div class="art-line"></div>
+
+            <span>
+              NGƯỜI CON GÁI NAM XƯƠNG
+            </span>
+
+          </div>
+
+        </aside>
+
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <span>
+      THỰC HIỆN CHO BÀI THỰC HÀNH NGỮ VĂN
+    </span>
+
+    <span>
+      © 2026
+    </span>
+
+  </footer>
+
+
+  <script src="script.js"></script>
 
 </body>
 </html>
