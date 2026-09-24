@@ -57,3 +57,13 @@ dialog::backdrop{background:rgba(59,36,28,.55)}
 .dlg-close{position:absolute;top:12px;right:16px;border:0;background:none;font-size:32px;line-height:1;color:var(--brown);cursor:pointer}.dlg-close:hover{color:var(--red)}
 @media(max-width:850px){.hub{grid-template-columns:1fr 1fr;gap:20px}.dlg-body{padding:28px 22px}}
 @media(max-width:520px){.hub{grid-template-columns:1fr}}
+
+/* --- Trang cốt truyện: chữ bên trái, hình bên phải --- */
+.story{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start}
+.story-text{padding:38px 42px}
+.story-text p{font-size:16px;line-height:1.95;margin:0 0 18px}
+.story-text .story-end{margin:26px 0 0;padding-top:22px;border-top:1px solid var(--line);font-family:"Playfair Display",serif;font-size:20px;line-height:1.6;color:var(--red)}
+.story-art{margin:0;position:sticky;top:96px}
+.story-art img{display:block;width:100%;height:auto;border:8px solid var(--paper);box-shadow:10px 10px 0 rgba(112,39,25,.12)}
+.story-art figcaption{margin-top:14px;font-size:12px;color:var(--olive);text-align:center}
+@media(max-width:850px){.story{grid-template-columns:1fr;gap:30px}.story-text{padding:28px 24px}.story-art{position:static}}
