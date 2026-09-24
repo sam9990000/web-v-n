@@ -26,3 +26,10 @@ footer{display:flex;justify-content:space-between;padding:24px 6vw;background:va
 .hero-image-frame{position:relative;width:min(430px,100%);height:540px;overflow:visible;border:none;box-shadow:none;background:transparent;transform:rotate(1deg)}
 .hero-image-frame img{width:100%;height:100%;display:block;object-fit:contain;object-position:center center;transform:scaleX(-1)}
 @media(max-width:900px){.hero-image-art{min-height:430px;padding:18px 24px 30px}.hero-image-frame{width:min(300px,86vw);height:420px}}
+
+/* Hòa ảnh vào nền giấy: không còn cảm giác có một hình chữ nhật phía sau */
+.hero-image-frame img {
+  mix-blend-mode: multiply;
+  opacity: .96;
+  filter: saturate(.98) contrast(1.02);
+}
